@@ -1,0 +1,19 @@
+<h1>
+  Generating PDF - WIP
+</h1>
+
+<button pButton type="button" (click)="generatingPDF()" label="Re-generate PDF" [disabled]="text==null"></button>
+
+<p-tabView (onChange)="changeTab($event)">
+
+    <p-tabPanel header="Edit" leftIcon="fa-code">
+      <p-editor [(ngModel)]="text" [style]="{'height':'320px'}"></p-editor>
+      Text: {{text}}
+    </p-tabPanel>
+
+    <p-tabPanel header="PDF" leftIcon="fa-file-pdf-o">
+      <iframe [src]='pdfviewer' width="100%" height="700px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+      </iframe>
+    </p-tabPanel>
+
+</p-tabView>
